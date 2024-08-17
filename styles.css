@@ -14,10 +14,18 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    
     background: linear-gradient(to left top, #FA6D56, #E2AF72 );
     padding: 0.5rem;
-    border-radius: 10px;
+    border-radius: 20px;
     margin-bottom: 5px;
+    /* margin-left: 3px;
+    margin-right: 3px; */
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
 }
 header{
     display: flex;
@@ -56,7 +64,7 @@ section{
             border-radius: 10px;
             padding: 0.4rem;
             text-align: center;
-            text-transform: uppercase;
+            /* text-transform: uppercase; */
         }
     }
     select{
@@ -89,19 +97,18 @@ section{
 }
 .container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     background:whitesmoke ;
-    height: 100vh;
+    /* height: 100vh; */
     width: calc(100vw - 20px);
-    border-radius: 10px;
-    display: flex;
-    flex-wrap: wrap;    
-    gap: 1rem;
-    padding: 0.5rem;
-    overflow-y: auto;
+    border-radius: 10px;   
+    /* gap: 1rem;
+    padding: 0.5rem; */
+    /* overflow-y: auto; */
     .card{
         display: flex;
         flex-direction: column;
@@ -110,7 +117,7 @@ section{
         gap: 0.5rem;
         height: 60vh;
         width: 18vw;
-        background-color: #f5f5f5;
+        background-color: #000000;
         border-radius: 10px;
         padding: 0.5rem;
         img{    
@@ -203,9 +210,9 @@ section{
     cursor: pointer;
 }
 .inner-card{
-    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    /* -webkit-box-shadow: 3px 3px 5px 6px #ccc;
     -moz-box-shadow: 3px 3px 5px 6px #ccc;
-    box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow: 3px 3px 5px 6px #ccc; */
     border-radius: 10px;
     position: relative;
     width: 100%;
@@ -239,37 +246,44 @@ section{
 }
 .front-card img, .back-card img {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    background-color: #8abec7;
+    border-radius: 50%;
+    
+    /* background-color: rgb(201, 112, 112); */
 }
 .front-card .id{
     padding: 5px 20px;
-    background-color: rgb(60, 87, 87);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    color: #000000;
     border-radius: 10px;
     margin-right: 8rem;
 }
 .front-card .type{
     padding: 5px 20px;
-    background-color: rgb(65, 37, 37);
+    color: #000000;
+    text-transform: uppercase;
+    background-color: none;
     border-radius: 50px;
 }
 .front-card .stats{
     padding: 5px 20px;
-    background-color: rgb(65, 196, 117);
+    color: #000000;
+    background-color: none;
     border-radius: 50px;
 }
 .front-card .name, .back-card .name{
-    padding: 5px 20px;
-    background-color: rgb(89, 204, 189);
-    border-radius: 10px;
+    padding: 5px;
+    height: 6vh;
+    text-transform: uppercase;
+    background-color: #FA6D56;
+    border-radius: 20px;
 }
 .back-card .ability{
     padding: 5px 20px;
-    background-color: darkolivegreen;
+    background-color: none;
+    color: #000000;
     border-radius: 10px;
+    text-transform: uppercase;
 }
-#grass {
+/* #Grass {
     background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
 }
 
@@ -277,19 +291,19 @@ section{
     background: linear-gradient(to right, #76b852, #8DC26F);
 }
 
-#fire {
+#Fire {
     background: linear-gradient(to right, #ff4b1f, #ff9068);
 }
 
-#water {
+#Water {
     background: linear-gradient(to right, #36d1dc, #5b86e5);
 }
 
-#ice {
+#Ice {
     background: linear-gradient(to right, #4ca1af, #c4e0e5);
 }
 
-#electric {
+#Electric {
     background: linear-gradient(to right, #f7971e, #ffd200);
 }
 
@@ -301,34 +315,34 @@ section{
     background: linear-gradient(to right, #fbc2eb, #a18cd1);
 }
 
-#ghost {
+#Ghost {
     background: linear-gradient(to right, #616161, #9bc5c3);
 }
 
-#ground {
+#Ground {
     background: linear-gradient(to right, #ba8b02, #181818);
 }
 
-#poison {
+#Poison {
     background: linear-gradient(to right, #8e44ad, #c39bd3);
 }
 
-#normal {
+#Normal {
     background: linear-gradient(to right, #cfd9df, #e2ebf0);
 }
 
-#dragon {
+#Dragon {
     background: linear-gradient(to right, #f12711, #f5af19);
 }
 
-#fighting {
+#Fighting {
     background: linear-gradient(to right, #ff8008, #ffc837);
 }
 
-#rock {
+#Rock {
     background: linear-gradient(to right, #3c3b3f, #605c3c);
-}
-.find-container img{
+} */
+/* .find-container img{
     width: 14rem;
     margin-top: 2.5rem;
 }
@@ -337,8 +351,8 @@ section{
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-}
-#type{
+} */
+/* #type{
     padding: 10px 20px;
     border: none;
     outline: 0;
@@ -347,5 +361,100 @@ section{
     color: whitesmoke;
     font-weight: bold;
     cursor: pointer;
+} */
+
+@media screen and (max-width: 600px) {
+    .container{
+        display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background:whitesmoke ;
+    /* height: 100vh; */
+    width: calc(100vw - 20px);
+    border-radius: 10px;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        height: 60vh;
+        width: 18vw;
+        background-color: #000000;
+        border-radius: 10px;
+        padding: 0.5rem;
+    }
+    }
+
+    .find-container img {
+        width: 10rem;
+    }
+
+    #first, #second {
+        flex-direction: column;
+    }
+
+    #type {
+        margin-top: 1rem;
+    }
+
+    .front-card .id {
+        margin-right: 0;
+    }
+
+    .front-card img, .back-card img {
+        width: 150px;
+    }
+
+    .front-card .name, .back-card .name {
+        font-size: 1.2rem;
+    }
+
+    .front-card .type, .back-card .type {
+        font-size: 1rem;
+    }
+
+    .front-card .stats, .back-card .stats {
+        font-size: 1rem;
+    }
+
+    .front-card .ability, .back-card .ability {
+        font-size: 1rem;
+    }
+
+    .front-card .id, .back-card .id {
+        font-size: 1rem;
+
+    }
+
+    .front-card .id, .back-card .id {
+        font-size: 1rem;
+    }
+
+    .front-card .name, .back-card .name {
+        font-size: 1rem;
+    }
+
+    .front-card .type, .back-card .type {
+        font-size: 1rem;
+    }
+
+    .front-card .stats, .back-card .stats {
+        font-size: 1rem;
+    }
+
+    .front-card .ability, .back-card .ability {
+        font-size: 1rem;
+    }
+
+    .front-card .id, .back-card .id {
+        font-size: 1rem;
+    }
+
+    
 }
 
