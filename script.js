@@ -4,16 +4,18 @@ let container = document.getElementById("container");
 let filter = document.getElementById("filter");
 let reset = document.getElementById("reset");
 
+
+
 reset.addEventListener("click", () => {
     window.location.reload();
 });
 
 search.addEventListener("input", function(){
-    let searchValue = user_input.value;
+    let searchValue = search.value;
      let allCards = document.querySelectorAll(".card");
     //  console.log(allCards);
      allCards.forEach(function(card){
-        let pokemonName = card.children[0].children[0].children[2].innerText;
+        let pokemonName = card.children[0].children[0].children[1].innerText;
         if(pokemonName.startsWith(searchValue)){
             card.style.display = "block";
         }else{
@@ -24,21 +26,32 @@ search.addEventListener("input", function(){
 })
 
 filter.addEventListener("click", function(){
+    console.log(types.value);
     let allCards = document.querySelectorAll(".card");
     allCards.forEach(function(card){
-        let pokemonType = card.children[0].children[0].children[3].innerText;
-        if(pokemonType === select_type.value){
+        let pokemonType = card.children[0].children[0].children[2].innerText;
+        // let high = types.value;
+        // high.style.textTransform = "";
+        // console.log(pokemonType);
+        if(pokemonType === types.value){
+            // console.log(card);
+            
+            // console.log(types.value);
             card.style.display = "block";
         }
         else{
             card.style.display = "none";
+            // console.log(pokemonType); 
         }
     })
 })
 
 function pokemonCreate(details){
+    console.log(details);
+    
     let card = document.createElement('div');
     let imageGen = details.sprites.front_default;
+    let typess = details.types[0].type.name;
     card.classList.add("card")
     card.innerHTML=`
     <div class="inner-card" id="${details.types[0].type.name}"> 
@@ -46,9 +59,10 @@ function pokemonCreate(details){
         
         <img class="imgPok" src="${imageGen}">
         <div class="name">${details.name}</div>
-        <div class="nones"><div class="type"> Type : ${details.types[0].type.name}</div>
+        // Type :
+        <div class="type"> ${typess}</div>
         <div class="stats">Stats : ${details.stats[0].base_stat}</div>
-        </div>
+        
         </div>
 
         <div class="back-card">
@@ -139,12 +153,7 @@ function pokemonCreate(details){
         // imgBack.style.background = "#704170";
         name.style.background = "#704170";
     }
-    
-    
-    // imgPok.style.backgroundColor = color;
-    
-
-    console.log(card);
+    // console.log(card);
     return card;
     
 }
@@ -156,9 +165,9 @@ async function fetchPokemon(i){
 }
 
 async function fetchingMainData() {
-    for (let i = 1; i <= 200; i++) {
+    for (let i = 1; i <= 2; i++) {
         let pokemon = await fetchPokemon(i);
-        console.log(pokemon);
+        // console.log(pokemon);
         
         let card = pokemonCreate(pokemon);
         container.appendChild(card);
