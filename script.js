@@ -33,7 +33,7 @@ filter.addEventListener("click", function(){
         // let high = types.value;
         // high.style.textTransform = "";
         // console.log(pokemonType);
-        if(pokemonType === types.value){
+        if(pokemonType === "FIRE"){
             // console.log(card);
             
             // console.log(types.value);
