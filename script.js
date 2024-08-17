@@ -165,7 +165,7 @@ async function fetchPokemon(i){
 }
 
 async function fetchingMainData() {
-    for (let i = 1; i <= 2; i++) {
+    for (let i = 1; i<=200; i++) {
         let pokemon = await fetchPokemon(i);
         // console.log(pokemon);
         
